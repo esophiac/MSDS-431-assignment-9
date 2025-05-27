@@ -1,4 +1,6 @@
 github.com/esophiac/trimmed v0.0.0-20250526003049-9c08f7d1e6a1 h1:DppEsvKp3Mb9EDN9V+HdEdPuY7CjrAHOqyvMEj99AiA=
 github.com/esophiac/trimmed v0.0.0-20250526003049-9c08f7d1e6a1/go.mod h1:kNYuD+ukTDLWNzlrgxYGdvqtyYnstAVcbg6uWty1Q/w=
+github.com/esophiac/trimmed v0.0.0-20250527223819-d08daedf3626 h1:/eBJ2SwnmoZZxvsWKOfgVBFOiQ+O/J3CgVwcMDtcg10=
+github.com/esophiac/trimmed v0.0.0-20250527223819-d08daedf3626/go.mod h1:kNYuD+ukTDLWNzlrgxYGdvqtyYnstAVcbg6uWty1Q/w=
 github.com/seehuhn/mt19937 v1.0.0 h1:r02DuVkQXfohssWZO8L/TeAlYOah7aNNubEHB/7Vtfs=
 github.com/seehuhn/mt19937 v1.0.0/go.mod h1:RikyXajNu+1Gqxm4hOacc3ckyWRd0usF6IkE3gnEcAM=

@@ -26,12 +26,12 @@ func sliceFloat(lngth int, max int) []float64 {
 }
 
 // create a slice of random ints that is lngth long
-func sliceInt(lngth int, max int) []int {
+func sliceInt(lngth int, max int) []float64 {
 
-	var result []int
+	var result []float64
 
 	for i := 0; i < lngth; i++ {
-		result = append(result, rand.Intn(max)) // Generates random integers between 0 and max
+		result = append(result, float64(rand.Intn(max))) // Generates random integers between 0 and max
 	}
 
 	return result
@@ -64,6 +64,19 @@ func boots[T AllNum](ch chan []T, fSlice []T, n int) {
 	close(ch)
 }
 
+// Compute median n times to generate a distribution of estimated statistics
+// Receivedd channel
+func bootsMean(ch chan []float64, trimVals []float64) (meanSlice []float64) {
+
+	for data := range ch {
+
+		newData := trimmed9.TrimMean(data, trimVals)
+		meanSlice = append(meanSlice, newData)
+	}
+
+	return meanSlice
+}
+
 func main() {
 
 	rand.New(mt19937.New())
@@ -71,14 +84,14 @@ func main() {
 	// running the program to create samples of at least 100 integers with symmetric trimming results (0.05)
 	// with bootstrapping
 
-	testSlice := sliceInt(100, 100)
+	testInt := sliceInt(100, 100)
 	trimSlice := []float64{0.05}
 
-	//intChannel := make(chan []float64)
-	//go boots(intChannel, testSlice, 100)
+	intChannel := make(chan []float64)
+	go boots(intChannel, testInt, 100)
+	testMean := bootsMean(intChannel, trimSlice)
 
-	finishSlice := trimmed9.TrimSlice(testSlice, trimSlice)
-	fmt.Println(testSlice)
-	fmt.Println(finishSlice)
+	fmt.Println(testInt)
+	fmt.Println(testMean)
 
 }
