@@ -92,6 +92,17 @@ func main() {
 	testMean := bootsMean(intChannel, trimSlice)
 	finalMean := trimmed9.Mean(testMean)
 
-	fmt.Println(finalMean)
+	fmt.Println("Bootstrap Sampled Mean, Ints: ", finalMean)
+
+	// running the program to create samples of at least 100 floats with symmetric trimming results (0.05)
+	// with bootstrapping. Uses the same trimSlice as the Int test.
+	testFloat := sliceFloat(100, 100)
+
+	floatChannel := make(chan []float64)
+	go boots(floatChannel, testFloat, 100)
+	floatMean := bootsMean(floatChannel, trimSlice)
+	finalFloat := trimmed9.Mean(floatMean)
+
+	fmt.Println("Bootstrap Sampled Mean, Floats: ", finalFloat)
 
 }
