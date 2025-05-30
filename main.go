@@ -90,8 +90,8 @@ func main() {
 	intChannel := make(chan []float64)
 	go boots(intChannel, testInt, 100)
 	testMean := bootsMean(intChannel, trimSlice)
+	finalMean := trimmed9.Mean(testMean)
 
-	fmt.Println(testInt)
-	fmt.Println(testMean)
+	fmt.Println(finalMean)
 
 }
