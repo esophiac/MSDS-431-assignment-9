@@ -5,7 +5,7 @@ For this assignment, we created a package to read a slice of integers and/or flo
 This assignment uses the Mersenne Twister from the third-party package at [https://github.com/seehuhn/mt19937](https://github.com/seehuhn/mt19937).
 
 ## Roles of Programs and Data
-This program was completed in Go, but there is also a demonstration of the trimmed mean in R. The demonstration in R shows that the bootstrap sampled trimmed mean is the same thing as the trimmed mean of the original sample. Therefore, the bootstrap sampled mean in Go is the same thing as the original sample mean.
+This program was completed in Go, but there is also a demonstration of the trimmed mean in R. The demonstration in R shows that the bootstrap sampled trimmed mean is the same thing as the trimmed mean of the original sample. Therefore, the bootstrap trimmed sampled mean in Go is the same thing as the original trimmed sample mean.
 
 ### trimmed Package
 The package that was used to compute the trimmed mean can be found at [https://github.com/esophiac/trimmed](https://github.com/esophiac/trimmed).
@@ -18,6 +18,7 @@ These are the programs in the repository.
 - main.go: demonstrating the trimmed package
 - README.md: the readme file for the repository
 - trimmed_mean.R : demonstrating how the trimmed mean works in R.
+- week9.exe: the final build for the assignment
 
 ## Application
 An executable for this project was created using Windows. To create your own executable, run go build in the same directory as the go program. For more information, see the Gopher documentation on creating an executable [here](https://go.dev/doc/tutorial/compile-install).
